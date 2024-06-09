@@ -1,0 +1,315 @@
+.container {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.d-flex--justify {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.gap1 {
+  gap: 1em;
+}
+
+.gap2 {
+  gap: 2em;
+}
+
+.gap3 {
+  gap: 3em;
+}
+
+.btn {
+  display: inline-block;
+  background-color: hsl(5deg, 85%, 63%);
+  color: hsl(240deg, 100%, 5%);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 12px 25px;
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.btn:hover, .btn:focus {
+  background-color: hsl(240deg, 100%, 5%);
+  color: #fff;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #504e53;
+}
+body h1, body h2, body h3 {
+  color: hsl(240deg, 100%, 5%);
+}
+body h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+body h2 {
+  font-size: 2.3rem;
+}
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: 0.3s opacity ease;
+  transition: 0.3s opacity ease;
+  display: none;
+}
+@media screen and (max-width: 590px) {
+  body::after {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+body.show-overlay {
+  overflow-y: hidden;
+}
+body.show-overlay::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: 0.3s color ease-in-out;
+  transition: 0.3s color ease-in-out;
+}
+a:hover, a:focus {
+  color: hsl(5deg, 85%, 63%);
+}
+
+.header {
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+.header .hamburger, .header .close-x {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+.header .close-x {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+@media screen and (max-width: 590px) {
+  .header .hamburger, .header .close-x {
+    display: block;
+  }
+  .header .header-nav {
+    background-color: #fff;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 75%;
+    padding: 20px;
+    translate: 100% 0;
+    -webkit-transition: 0.3s translate ease;
+    transition: 0.3s translate ease;
+  }
+  .header .header-nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 10em;
+  }
+  .header .header-nav.mobile-nav-show {
+    translate: 0 0;
+  }
+}
+
+.main p, .main p a {
+  line-height: 1.5;
+}
+.main .col-70 {
+  width: 70%;
+}
+.main .col-30 {
+  width: 30%;
+}
+.main .hero-content-block {
+  width: 50%;
+  margin-top: 25px;
+}
+.main .hero-content-block h1, .main .hero-content-block > p:first-of-type {
+  margin-top: 0;
+}
+.main .hero-content-block .btn {
+  margin-top: 15px;
+}
+.main .aside-links {
+  background: hsl(240deg, 100%, 5%);
+  padding: 20px;
+}
+.main .aside-links > h2 {
+  color: hsl(35deg, 77%, 62%);
+  margin-top: 0;
+}
+.main .aside-links ul li {
+  border-bottom: 1px solid hsl(233deg, 8%, 79%);
+}
+.main .aside-links ul li a {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.main .aside-links ul li a h3 {
+  color: #fff;
+  -webkit-transition: 0.3s color ease;
+  transition: 0.3s color ease;
+}
+.main .aside-links ul li a p {
+  color: hsl(233deg, 8%, 79%);
+  font-size: 0.9rem;
+}
+.main .aside-links ul li a:hover h3, .main .aside-links ul li a:focus h3 {
+  color: hsl(35deg, 77%, 62%);
+}
+.main .aside-links ul li:first-of-type a {
+  padding-top: 0;
+}
+.main .aside-links ul li:last-of-type {
+  border-bottom: none;
+}
+.main .aside-links ul li:last-of-type a {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 890px) {
+  .main .top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .top > .col {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 590px) {
+  .main .top .col > .d-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+    margin-bottom: 2em;
+  }
+  .main .top .col > .d-flex .hero-content-block {
+    width: 100%;
+  }
+  .main .top .col > .d-flex .hero-content-block h1 {
+    margin-bottom: 0;
+  }
+}
+
+.bottom {
+  margin-top: 3em;
+}
+.bottom ul li img {
+  width: 100px;
+  height: 128px;
+}
+.bottom ul li h2 {
+  color: hsl(5deg, 85%, 63%);
+  font-size: 1.8rem;
+  margin: 0;
+}
+.bottom ul li h3 {
+  margin: 5px 0 10px;
+  font-size: 1rem;
+  -webkit-transition: 0.3s color ease;
+  transition: 0.3s color ease;
+}
+.bottom ul li a p {
+  color: #504e53 !important;
+}
+.bottom ul li a:hover h3, .bottom ul li a:focus h3 {
+  color: hsl(5deg, 85%, 63%);
+}
+@media screen and (max-width: 890px) {
+  .bottom ul li a {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .bottom ul li a img {
+    width: 100%;
+    height: 150px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media screen and (max-width: 590px) {
+  .bottom ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .bottom ul li a {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .bottom ul li a img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+.attribution {
+  margin-top: 10em;
+  padding-bottom: 1em;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(5deg, 85%, 63%);
+}
